@@ -5,12 +5,23 @@ import metotaralik from 'app-images/metot-aralık.jpg'
 import metotaralikrastgele from 'app-images/metot-aralık-rastgele.jpg'
 import metotaraliksirali from 'app-images/metot-aralık-sıralı.jpg'
 import metotaraliksiralisure from 'app-images/metot-aralık-sıralı-süre.jpg'
-
+import { Callout } from 'nextra/components'
 
 Aralık metodu, girilen zaman aralıkları üzerinde çalışmalar yapılmasını sağlar.
 
 Rastgele ve Sıralı olmak üzere iki alt modu bulunur.
 
+<Callout type="warning" emoji="⚠️">
+  Aralık metodu etkinken yalnızca "dakika ve saat" girişi yapılabilir. 
+  
+  Örneğin 2. saat 15. dakikayı ifade etmek için 2:15 yazılmalıdır. 
+  15. dakikayı ifade etmek için yalnızca 15 yazılmalıdır.
+
+  3:21-4:32 tanımı, 3. saat 21. dakika ile 4. saat 32. dakika aralığını ifade eder.
+
+  4-16 tanımı ise 4. dakika ile 16. dakika arasını ifade eder.
+</Callout>
+ 
 <Image src={metotaralik} />
 
 import Link from 'next/link';
@@ -55,7 +66,7 @@ Rastgele modu aktifken, girilen zaman aralıkları içerisinde " Üretim Sayıs�
 | URL | youtube.com/video-id |
 | :----- | :----: |
 | Üretim Sayısı | 3 |
-| Süre Aralıkları | ```2:14-3:21```,```6:16-9:19```,```17:21-24:18```,```34:13-39:21```    |
+| Süre Aralıkları | ```2-6```,```9-21```,```1:16-1:33```,```2:24-3:17```    |
 | Video Süresi/Sabit | 15 |
 | Metot | Aralık/Rastgele  |
 
@@ -65,10 +76,10 @@ Rastgele modu aktifken, girilen zaman aralıkları içerisinde " Üretim Sayıs�
 
 | Aralık | Üretilen Video Sayısı |
 | :----- | :----: |
-| 2:14-3:21 | 3 |
-| 6:16-9:19 | 3 |
-| 17:21-24:18 | 3 |
-| 34:13-39:21 | 3 |
+| 2-6 | 3 |
+| 9-21 | 3 |
+| 1:16-1:33 | 3 |
+| 2:24-3:17 | 3 |
 
 
 Her bir zaman aralığı için rastgele biçimde ayrı ayrı 15 saniyelik 3 adet video üretilmiş olur.
@@ -114,7 +125,7 @@ Yukarıda yer alan örnekte birkaç küçük değişiklik uygulayarak devam edel
 
 | URL | youtube.com/video-id |
 | :----- | :----: |
-| Süre Aralıkları | ```2:14-3:21```,```6:16-9:19```,```17:21-20:18```,```34:13-36:21```    |
+| Süre Aralıkları | ```2-4```,```9-12```,```1:16-1:18```,```2:24-2:27```    |
 | Video Süresi/Sabit | 45 |
 | Metot | Aralık/Düzenli  |
 
@@ -124,10 +135,10 @@ Yukarıda yer alan örnekte birkaç küçük değişiklik uygulayarak devam edel
 
 | Aralık | Üretim Yapılan Süreler | Üretilen Video Sayısı |
 | :----- | :----: | :----: |
-| 2:14-3:21 | ```2:14-2:59```,```2:59-3:44``` | 2 |
-| 6:16-9:19 | ```6:16-7:01```,```7:01-7:46```,```7:46-8:31```,```8:31-9:16```,```9:16-10:01``` | 5 |
-| 17:21-20:18 | ```17:21-18:06```,```18:06-18:51```,```18:51-19:34```,```19:34-20:19``` | 4 |
-| 34:13-36:21 | ```34:13-34:58```,```34:58-35:43```,```35:43-36:28``` | 3 |
+| 2-4 | ```2:00-2:45```,```2:45-3:30```,```3:30-4:15``` | 3 |
+| 9-12 | ```9:00-9:45```,```9:45-10:30```,```10:30-11:15```,```11:15-12:00```| 4 |
+| 1:16-1:18 | ```1:16:00-1:16:45```,```1:16:45-1:17:30```,```1:17:30-1:18:15``` | 3 |
+| 2:24-2:27 | ```2:24:00-2:24:45```,```2:24:45-2:25:30```,```2:25:30-2:26:15```,```2:26:15-2:27:00``` | 4 |
 
 
 Görüldüğü gibi, farklı zaman aralıkları için farklı sayıda içerikler oluşturuldu.
